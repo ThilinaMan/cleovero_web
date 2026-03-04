@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cleovoro | Cleaning Services</title>
+  <meta name="description" content="Cleovoro provides reliable home & office cleaning with flexible scheduling and transparent pricing." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2e;
+      --muted:#9fb0d0;
+      --text:#eaf0ff;
+      --brand:#46c2ff;
+      --brand2:#7c5cff;
+      --ok:#2ee59d;
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 16px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(70,194,255,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 30%, rgba(124,92,255,.18), transparent 60%),
+        radial-gradient(800px 500px at 50% 100%, rgba(46,229,157,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:22px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background: linear-gradient(135deg,var(--brand),var(--brand2));
+      box-shadow: 0 10px 28px rgba(70,194,255,.18);
+      display:grid;place-items:center;
+      font-weight:900;
+    }
+    .menu{display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:700}
+    .menu a{padding:10px 10px;border-radius:12px}
+    .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;border-radius:14px;border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+      font-weight:900;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg,var(--brand),var(--brand2));
+      box-shadow: 0 16px 40px rgba(70,194,255,.14);
+    }
+    .btn.primary:hover{transform: translateY(-2px)}
+    .btn.small{padding:10px 12px;border-radius:12px;font-weight:900}
+    .burger{display:none}
+    .hero{
+      padding:46px 0 24px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-weight:800;
+      width:max-content;
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--ok);box-shadow:0 0 0 4px rgba(46,229,157,.12)}
+    h1{font-size: clamp(34px, 4vw, 54px);line-height:1.05;margin:14px 0 12px}
+    .lead{color:var(--muted);font-size: 16px;max-width: 58ch}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+    .trust{
+      display:flex;gap:14px;flex-wrap:wrap;
+      color:var(--muted);font-weight:800;font-size:13px;
+      margin-top:10px;
+    }
+    .trust span{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 12px;border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .quote-card{padding:18px}
+    .quote-title{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .quote-title h3{margin:0;font-size:16px}
+    .quote-title p{margin:0;color:var(--muted);font-weight:800;font-size:12px}
+    .form{
+      margin-top:14px;
+      display:grid;
+      gap:10px;
+    }
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    label{font-size:12px;color:var(--muted);font-weight:800}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(10,16,28,.55);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{border-color: rgba(70,194,255,.5); box-shadow: 0 0 0 4px rgba(70,194,255,.12)}
+    textarea{min-height:90px;resize:vertical}
+    .hint{color:var(--muted);font-size:12px;font-weight:700}
+    .price{
+      margin-top:8px;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 12px;border-radius:14px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
+      gap:10px;
+    }
+    .price strong{font-size:18px}
+    .pill{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    section{padding:34px 0}
+    .section-title{
+      display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .section-title h2{margin:0;font-size:24px}
+    .section-title p{margin:0;color:var(--muted);font-weight:700;max-width:70ch}
+    .features{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .feature{padding:16px}
+    .icon{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      background: rgba(70,194,255,.10);
+      border:1px solid rgba(70,194,255,.22);
+      margin-bottom:10px;
+      font-size:18px;
+    }
+    .feature h3{margin:6px 0 6px;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-weight:650;font-size:13px}
+
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .plan{padding:18px; position:relative; overflow:hidden}
+    .plan .tag{
+      position:absolute; top:14px; right:14px;
+      padding:8px 10px;border-radius:999px;
+      font-size:12px;font-weight:900;
+      background:rgba(124,92,255,.16);
+      border:1px solid rgba(124,92,255,.3);
+      color:var(--text);
+    }
+    .plan h3{margin:0 0 6px}
+    .plan .p{color:var(--muted);margin:0 0 12px;font-weight:700}
+    .plan .money{font-size:34px;font-weight:1000}
+    .plan .per{color:var(--muted);font-weight:800}
+    .list{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:10px; color:var(--muted); font-weight:750}
+    .list li{display:flex;gap:10px;align-items:flex-start}
+    .tick{width:20px;height:20px;border-radius:8px;background:rgba(46,229,157,.12);border:1px solid rgba(46,229,157,.25);display:grid;place-items:center;color:var(--ok);font-weight:1000}
+    .plan .actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+
+    .testimonials{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:12px;
+      align-items:stretch;
+    }
+    .review{padding:16px}
+    .stars{letter-spacing:1px;color:#ffd36a}
+    .review p{color:var(--muted);font-weight:700;margin:10px 0 0}
+    .review .who{margin-top:12px;color:var(--text);font-weight:900}
+    .review .where{color:var(--muted);font-weight:800;font-size:12px}
+
+    .cta{
+      padding:18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .cta h3{margin:0;font-size:18px}
+    .cta p{margin:4px 0 0;color:var(--muted);font-weight:700}
+
+    footer{
+      padding:26px 0 40px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-weight:700;
+    }
+    .foot{
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center
+    }
+    .links{display:flex;gap:14px;flex-wrap:wrap}
+    .links a{padding:8px 10px;border-radius:12px}
+    .links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+
+    /* toast */
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      background: rgba(10,16,28,.88);
+      border:1px solid rgba(255,255,255,.18);
+      padding:12px 14px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      display:none;
+      gap:10px;
+      align-items:center;
+      z-index:999;
+      max-width:min(620px, calc(100% - 24px));
+    }
+    .toast.show{display:flex;animation: pop .18s ease-out}
+    .toast .ticon{
+      width:28px;height:28px;border-radius:12px;
+      display:grid;place-items:center;
+      background:rgba(46,229,157,.12);
+      border:1px solid rgba(46,229,157,.22);
+      color:var(--ok);
+      font-weight:1000;
+      flex:0 0 auto;
+    }
+    .toast .ttext{color:var(--text);font-weight:800}
+    .toast .tmuted{color:var(--muted);font-weight:700;font-size:12px;margin-top:2px}
+    @keyframes pop{
+      from{transform:translateX(-50%) translateY(6px); opacity:.6}
+      to{transform:translateX(-50%) translateY(0); opacity:1}
+    }
+
+    /* responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; padding-top:30px}
+      .features{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .menu{display:none}
+      .burger{display:inline-flex}
+      .grid2{grid-template-columns:1fr}
+    }
+    /* mobile menu */
+    .mobile{
+      display:none;
+      border-top:1px solid var(--line);
+      padding:10px 0 14px;
+    }
+    .mobile a{
+      display:block;
+      padding:12px 12px;
+      margin-top:8px;
+      border-radius:14px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      font-weight:800;
+    }
+    .mobile a:hover{color:var(--text);background: rgba(255,255,255,.06)}
+    .mobile.show{display:block}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">
+        <div class="logo">C</div>
+        <div>
+          <div style="font-size:14px;opacity:.95">Cleovoro</div>
+          <div style="font-size:12px;color:var(--muted);font-weight:800;margin-top:1px">Cleaning Services</div>
+        </div>
+      </a>
+
+      <div class="menu" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a class="btn small" href="#quote">Get a Quote</a>
+      </div>
+
+      <button class="btn burger" id="burgerBtn" aria-label="Open menu">☰</button>
+    </div>
+    <div class="wrap mobile" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#quote">Get a Quote</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main id="top" class="wrap">
+    <div class="hero">
+      <div>
+        <div class="badge"><span class="dot"></span> Same-day bookings • Vetted cleaners • Satisfaction guarantee</div>
+        <h1>Spotless spaces, without the stress.</h1>
+        <p class="lead">
+          Cleovoro delivers professional home and office cleaning with flexible scheduling, transparent pricing,
+          and friendly, background-checked cleaners.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#quote">Book a Clean</a>
+          <a class="btn" href="#services">See Services</a>
+        </div>
+
+        <div class="trust">
+          <span>✅ Insured & reliable</span>
+          <span>🕒 Flexible times</span>
+          <span>🧴 Eco options</span>
+          <span>⭐ 4.9/5 average rating</span>
+        </div>
+      </div>
+
+      <!-- Quote card -->
+      <div id="quote" class="card quote-card">
+        <div class="quote-title">
+          <div>
+            <h3>Instant Quote</h3>
+            <p>Get an estimated price in seconds</p>
+          </div>
+          <span class="pill" id="instantStatus">Live estimate</span>
+        </div>
+
+        <form class="form" id="quoteForm">
+          <div class="grid2">
+            <div>
+              <label for="service">Service</label>
+              <select id="service" required>
+                <option value="standard">Standard Clean</option>
+                <option value="deep">Deep Clean</option>
+                <option value="end">End of Tenancy</option>
+                <option value="office">Office Clean</option>
+              </select>
+            </div>
+            <div>
+              <label for="property">Property</label>
+              <select id="property" required>
+                <option value="studio">Studio</option>
+                <option value="1bed">1 Bedroom</option>
+                <option value="2bed">2 Bedroom</option>
+                <option value="3bed">3 Bedroom</option>
+                <option value="4bed">4+ Bedroom</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label for="frequency">Frequency</label>
+              <select id="frequency" required>
+                <option value="once">One-time</option>
+                <option value="weekly">Weekly (10% off)</option>
+                <option value="biweekly">Bi-weekly (7% off)</option>
+                <option value="monthly">Monthly (5% off)</option>
+              </select>
+            </div>
+            <div>
+              <label for="date">Preferred date</label>
+              <input type="date" id="date" required />
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label for="postcode">Postcode</label>
+              <input id="postcode" placeholder="e.g., TW3 1AA" required />
+              <div class="hint">UK postcodes supported (demo validation).</div>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" placeholder="e.g., 07xxx xxxxxx" required />
+              <div class="hint">We’ll text a confirmation (demo).</div>
+            </div>
+          </div>
+
+          <div>
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" placeholder="Pets, parking, focus areas, preferred products..."></textarea>
+          </div>
+
+          <div class="grid2">
+            <label style="display:flex;gap:10px;align-items:center;margin-top:6px">
+              <input type="checkbox" id="eco" />
+              <span class="hint" style="color:var(--text)">Eco-friendly products</span>
+            </label>
+
+            <label style="display:flex;gap:10px;align-items:center;margin-top:6px">
+              <input type="checkbox" id="insideOven" />
+              <span class="hint" style="color:var(--text)">Include oven clean</span>
+            </label>
+          </div>
+
+          <div class="price">
+            <div>
+              <div class="hint">Estimated price</div>
+              <strong id="priceValue">£—</strong>
+              <div class="hint" id="priceHint">Select options to see estimate.</div>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+              <span class="pill" id="durationPill">~— hrs</span>
+              <button class="btn primary" type="submit">Request Booking</button>
+            </div>
+          </div>
+
+          <div class="hint">
+            By submitting, you agree to be contacted by Cleovoro. This is a demo landing page—no data is sent anywhere.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-title">
+        <div>
+          <h2>Services that fit your life</h2>
+          <p>Choose the clean you need—home, office, deep clean, or end of tenancy. Add extras anytime.</p>
+        </div>
+        <a class="btn" href="#quote">Get a Quote</a>
+      </div>
+
+      <div class="features">
+        <div class="card feature">
+          <div class="icon">🏠</div>
+          <h3>Home Cleaning</h3>
+          <p>Kitchen, bathrooms, floors, dusting, and tidy finishes—perfect for regular upkeep.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🧽</div>
+          <h3>Deep Cleaning</h3>
+          <p>Extra attention to buildup, skirting boards, appliances, and hard-to-reach areas.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🧳</div>
+          <h3>End of Tenancy</h3>
+          <p>Move-out ready cleaning designed to help you meet landlord/agency expectations.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🏢</div>
+          <h3>Office Cleaning</h3>
+          <p>Workspaces, meeting rooms, kitchens, and washrooms—outside business hours available.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">🧴</div>
+          <h3>Eco-Friendly Option</h3>
+          <p>Switch to eco products for a fresher clean with reduced harsh chemicals.</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">✅</div>
+          <h3>Satisfaction Guarantee</h3>
+          <p>If something is missed, we’ll return and fix it—simple and stress-free.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="section-title">
+        <div>
+          <h2>Simple pricing</h2>
+          <p>Transparent packages to get you started. Your quote may vary based on size, condition, and add-ons.</p>
+        </div>
+      </div>
+
+      <div class="pricing">
+        <div class="card plan">
+          <h3>Standard</h3>
+          <p class="p">Best for weekly or regular upkeep.</p>
+          <div><span class="money">£59</span> <span class="per">/ from</span></div>
+          <ul class="list">
+            <li><span class="tick">✓</span> Dusting & surfaces</li>
+            <li><span class="tick">✓</span> Floors vacuum & mop</li>
+            <li><span class="tick">✓</span> Kitchen & bathroom clean</li>
+            <li><span class="tick">✓</span> Bin emptying</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#quote" data-preset="standard">Choose Standard</a>
+            <a class="btn" href="#contact">Ask a Question</a>
+          </div>
+        </div>
+
+        <div class="card plan">
+          <div class="tag">Most Popular</div>
+          <h3>Deep Clean</h3>
+          <p class="p">Perfect for spring cleaning or resets.</p>
+          <div><span class="money">£109</span> <span class="per">/ from</span></div>
+          <ul class="list">
+            <li><span class="tick">✓</span> Includes Standard package</li>
+            <li><span class="tick">✓</span> Skirting boards & detail clean</li>
+            <li><span class="tick">✓</span> Appliance exterior clean</li>
+            <li><span class="tick">✓</span> Extra time & attention</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#quote" data-preset="deep">Choose Deep</a>
+            <a class="btn" href="#contact">Ask a Question</a>
+          </div>
+        </div>
+
+        <div class="card plan">
+          <h3>End of Tenancy</h3>
+          <p class="p">Move-out ready. Great for renters & landlords.</p>
+          <div><span class="money">£149</span> <span class="per">/ from</span></div>
+          <ul class="list">
+            <li><span class="tick">✓</span> Intensive full-property clean</li>
+            <li><span class="tick">✓</span> Inside cupboards & drawers</li>
+            <li><span class="tick">✓</span> Bathrooms descaled</li>
+            <li><span class="tick">✓</span> Optional oven add-on</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="#quote" data-preset="end">Choose Tenancy</a>
+            <a class="btn" href="#contact">Ask a Question</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="section-title">
+        <div>
+          <h2>What customers say</h2>
+          <p>Fast, friendly, and consistently high quality—this is the standard Cleovoro aims for.</p>
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="card review">
+          <div class="stars">★★★★★</div>
+          <h3 style="margin:8px 0 6px">“The flat looked brand new.”</h3>
+          <p>
+            Cleovoro handled our end-of-tenancy clean and the agent was impressed. Booking was easy and the team was punctual.
+          </p>
+          <div class="who">Amelia R.</div>
+          <div class="where">London</div>
+        </div>
+
+        <div class="card review">
+          <div class="stars">★★★★★</div>
+          <h3 style="margin:8px 0 6px">“Reliable weekly cleaning.”</h3>
+          <p>
+            We book weekly and it’s been consistent every time. Great attention to bathrooms and kitchen.
+          </p>
+          <div class="who">James K.</div>
+          <div class="where">Hounslow</div>
+        </div>
+      </div>
+
+      <div class="card cta" style="margin-top:12px">
+        <div>
+          <h3>Ready for a cleaner space?</h3>
+          <p>Get an instant estimate and request a booking in under a minute.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#quote">Get Instant Quote</a>
+          <a class="btn" href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <div>
+          <h2>Contact Cleovoro</h2>
+          <p>Replace these demo details with your real phone, email, and service areas.</p>
+        </div>
+      </div>
+
+      <div class="features" style="grid-template-columns: repeat(3, 1fr)">
+        <div class="card feature">
+          <div class="icon">📞</div>
+          <h3>Phone</h3>
+          <p><strong style="color:var(--text)">+44 7xxx xxxxxx</strong><br/>Mon–Sat, 8am–7pm</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">✉️</div>
+          <h3>Email</h3>
+          <p><strong style="color:var(--text)">hello@cleovoro.co.uk</strong><br/>Replies within 24 hours</p>
+        </div>
+        <div class="card feature">
+          <div class="icon">📍</div>
+          <h3>Service Areas</h3>
+          <p>London • Greater London • Nearby towns<br/><span class="hint">(Demo text)</span></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap foot">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div class="logo" style="width:34px;height:34px;border-radius:12px">C</div>
+            <div>
+              <div style="color:var(--text);font-weight:900">Cleovoro</div>
+              <div style="font-size:12px">© <span id="year"></span> Cleovoro. All rights reserved.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="links">
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#quote">Quote</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="ticon">✓</div>
+    <div>
+      <div class="ttext" id="toastTitle">Request received</div>
+      <div class="tmuted" id="toastBody">We’ll contact you shortly.</div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- helpers ----------
+    const $ = (sel) => document.querySelector(sel);
+
+    function showToast(title, body){
+      const toast = $("#toast");
+      $("#toastTitle").textContent = title;
+      $("#toastBody").textContent = body;
+      toast.classList.add("show");
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => toast.classList.remove("show"), 3200);
+    }
+
+    function smoothCloseMobileMenu(){
+      const mobile = $("#mobileMenu");
+      mobile.classList.remove("show");
+    }
+
+    // ---------- mobile menu ----------
+    const burgerBtn = $("#burgerBtn");
+    const mobileMenu = $("#mobileMenu");
+
+    burgerBtn?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+
+    mobileMenu?.addEventListener("click", (e) => {
+      if(e.target.tagName.toLowerCase() === "a") smoothCloseMobileMenu();
+    });
+
+    // ---------- preset buttons ----------
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("[data-preset]");
+      if(!a) return;
+      const preset = a.getAttribute("data-preset");
+      const service = $("#service");
+      if(preset === "standard") service.value = "standard";
+      if(preset === "deep") service.value = "deep";
+      if(preset === "end") service.value = "end";
+      computeEstimate();
+    });
+
+    // ---------- quote estimator ----------
+    const serviceEl = $("#service");
+    const propertyEl = $("#property");
+    const frequencyEl = $("#frequency");
+    const dateEl = $("#date");
+    const ecoEl = $("#eco");
+    const ovenEl = $("#insideOven");
+    const postcodeEl = $("#postcode");
+    const phoneEl = $("#phone");
+
+    // default date = tomorrow (local)
+    (function initDate(){
+      const d = new Date();
+      d.setDate(d.getDate() + 1);
+      const iso = d.toISOString().slice(0,10);
+      dateEl.value = iso;
+      $("#year").textContent = new Date().getFullYear();
+    })();
+
+    function isValidUKPostcode(p){
+      // Simple demo-level UK postcode regex (not perfect but good enough for landing page)
+      const re = /^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2})$/i;
+      return re.test((p||"").trim());
+    }
+
+    function isValidPhone(p){
+      // Simple UK mobile-ish validation (demo)
+      const digits = (p||"").replace(/\D/g,"");
+      return digits.length >= 10 && digits.length <= 12;
+    }
+
+    function computeEstimate(){
+      const service = serviceEl.value;
+      const property = propertyEl.value;
+      const freq = frequencyEl.value;
+      const eco = ecoEl.checked;
+      const oven = ovenEl.checked;
+
+      // Base by service
+      const serviceBase = {
+        standard: 45,
+        deep: 85,
+        end: 120,
+        office: 75
+      }[service] ?? 45;
+
+      // Size multiplier
+      const size = {
+        studio: 1.0,
+        "1bed": 1.2,
+        "2bed": 1.45,
+        "3bed": 1.75,
+        "4bed": 2.1
+      }[property] ?? 1.0;
+
+      // Frequency discounts
+      const discount = {
+        once: 0.00,
+        weekly: 0.10,
+        biweekly: 0.07,
+        monthly: 0.05
+      }[freq] ?? 0.00;
+
+      // Add-ons
+      const ecoFee = eco ? 6 : 0;
+      const ovenFee = oven ? 18 : 0;
+
+      let price = (serviceBase * size) + ecoFee + ovenFee;
+      price = price * (1 - discount);
+
+      // duration estimate
+      const baseHours = {
+        standard: 2.0,
+        deep: 3.5,
+        end: 4.5,
+        office: 3.0
+      }[service] ?? 2.0;
+
+      const hours = Math.max(1.5, baseHours * (size * 0.95));
+      const hoursRounded = Math.round(hours * 2) / 2;
+
+      $("#priceValue").textContent = "£" + Math.round(price);
+      $("#durationPill").textContent = "~" + hoursRounded + " hrs";
+
+      // Hint text
+      const freqText = {
+        once: "One-time booking",
+        weekly: "Weekly discount applied",
+        biweekly: "Bi-weekly discount applied",
+        monthly: "Monthly discount applied"
+      }[freq];
+
+      $("#priceHint").textContent = `${freqText}${eco ? " • Eco products" : ""}${oven ? " • Oven included" : ""}`;
+
+      // Live estimate pill
+      $("#instantStatus").textContent = "Updated";
+      clearTimeout(computeEstimate._t);
+      computeEstimate._t = setTimeout(() => $("#instantStatus").textContent = "Live estimate", 900);
+    }
+
+    [serviceEl, propertyEl, frequencyEl, ecoEl, ovenEl].forEach(el => {
+      el.addEventListener("change", computeEstimate);
+      el.addEventListener("input", computeEstimate);
+    });
+
+    computeEstimate();
+
+    // ---------- form submit ----------
+    $("#quoteForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const postcode = postcodeEl.value.trim();
+      const phone = phoneEl.value.trim();
+
+      const postcodeOk = isValidUKPostcode(postcode);
+      const phoneOk = isValidPhone(phone);
+
+      if(!postcodeOk){
+        postcodeEl.focus();
+        showToast("Check your postcode", "Please enter a valid UK postcode (e.g., TW3 1AA).");
+        return;
+      }
+      if(!phoneOk){
+        phoneEl.focus();
+        showToast("Check your phone number", "Please enter a valid UK phone number.");
+        return;
+      }
+
+      // Create a booking summary (demo)
+      const summary = {
+        service: serviceEl.options[serviceEl.selectedIndex].text,
+        property: propertyEl.options[propertyEl.selectedIndex].text,
+        frequency: frequencyEl.options[frequencyEl.selectedIndex].text,
+        date: dateEl.value,
+        eco: ecoEl.checked ? "Yes" : "No",
+        oven: ovenEl.checked ? "Yes" : "No",
+        postcode,
+        phone,
+        price: $("#priceValue").textContent,
+        duration: $("#durationPill").textContent,
+        notes: $("#notes").value.trim()
+      };
+
+      // Save demo request locally (no server)
+      const key = "cleovoro_demo_requests";
+      const old = JSON.parse(localStorage.getItem(key) || "[]");
+      old.unshift({ ...summary, createdAt: new Date().toISOString() });
+      localStorage.setItem(key, JSON.stringify(old.slice(0, 25)));
+
+      showToast("Booking request saved (demo)", "We’ll contact you shortly to confirm your slot.");
+
+      // Optional: reset notes only
+      $("#notes").value = "";
+    });
+
+    // ---------- smooth anchor scrolling ----------
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if(!link) return;
+      const id = link.getAttribute("href");
+      if(id.length <= 1) return;
+
+      const target = document.querySelector(id);
+      if(!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", id);
+    });
+  </script>
+</body>
+</html>
