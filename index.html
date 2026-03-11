@@ -3,385 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cleovero | Cleaning Services</title>
-  <meta name="description" content="Cleovoro provides reliable home & office cleaning with flexible scheduling and transparent pricing." />
+  <title>Cleovoro | Cleaning Services</title>
+  <meta name="description" content="Cleovoro provides reliable home and office cleaning with flexible scheduling and transparent pricing." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <!-- NAV -->
-  <div class="nav">
+  <header class="nav" id="navbar">
     <div class="wrap nav-inner">
       <a href="#top" class="brand">
         <div class="logo">C</div>
         <div>
-          <div style="font-size:14px;opacity:.95">Cleovoro</div>
-          <div style="font-size:12px;color:var(--muted);font-weight:800;margin-top:1px">Cleaning Services</div>
+          <div class="brand-title">Cleovoro</div>
+          <div class="brand-sub">Cleaning Services</div>
         </div>
       </a>
 
-      <div class="menu" aria-label="Primary navigation">
+      <nav class="menu">
         <a href="#services">Services</a>
+        <a href="#why-choose-us">Why Us</a>
         <a href="#pricing">Pricing</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
-        <a class="btn small" href="#quote">Get a Quote</a>
-      </div>
+        <a class="btn primary small" href="#quote">Get a Quote</a>
+      </nav>
 
-      <button class="btn burger" id="burgerBtn" aria-label="Open menu">☰</button>
+      <button class="btn burger" id="burgerBtn">☰</button>
     </div>
-    <div class="wrap mobile" id="mobileMenu" aria-label="Mobile navigation">
+
+    <div class="wrap mobile" id="mobileMenu">
       <a href="#services">Services</a>
+      <a href="#why-choose-us">Why Us</a>
       <a href="#pricing">Pricing</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
       <a href="#quote">Get a Quote</a>
     </div>
-  </div>
+  </header>
 
   <!-- HERO -->
-  <main id="top" class="wrap">
-    <div class="hero">
-      <div>
-        <div class="badge"><span class="dot"></span> Same-day bookings • Vetted cleaners • Satisfaction guarantee</div>
-        <h1>Spotless spaces, without the stress.</h1>
-        <p class="lead">
-          Cleovoro delivers professional home and office cleaning with flexible scheduling, transparent pricing,
-          and friendly, background-checked cleaners.
-        </p>
+  <main id="top">
+    <section class="hero hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-content reveal">
+          <div class="badge"><span class="dot"></span> Same-day bookings • Vetted cleaners • Satisfaction guarantee</div>
+          <h1>Spotless spaces, beautifully cared for.</h1>
+          <p class="lead">
+            Cleovoro brings professional home and office cleaning with trusted staff,
+            flexible scheduling, and a premium customer experience from booking to finish.
+          </p>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="#quote">Book a Clean</a>
-          <a class="btn" href="#services">See Services</a>
+          <div class="hero-actions">
+            <a class="btn primary" href="#quote">Book a Clean</a>
+            <a class="btn ghost" href="#services">Explore Services</a>
+          </div>
+
+          <div class="trust">
+            <span>✅ Insured & reliable</span>
+            <span>🕒 Flexible times</span>
+            <span>🧴 Eco options</span>
+            <span>⭐ 4.9/5 average rating</span>
+          </div>
         </div>
 
-        <div class="trust">
-          <span>✅ Insured & reliable</span>
-          <span>🕒 Flexible times</span>
-          <span>🧴 Eco options</span>
-          <span>⭐ 4.9/5 average rating</span>
+        <div id="quote" class="card quote-card reveal">
+          <div class="quote-title">
+            <div>
+              <h3>Instant Quote</h3>
+              <p>Get a quick estimate in seconds</p>
+            </div>
+            <span class="pill" id="instantStatus">Live estimate</span>
+          </div>
+
+          <form class="form" id="quoteForm">
+            <div class="grid2">
+              <div>
+                <label for="service">Service</label>
+                <select id="service">
+                  <option value="standard">Standard Clean</option>
+                  <option value="deep">Deep Clean</option>
+                  <option value="end">End of Tenancy</option>
+                  <option value="office">Office Clean</option>
+                </select>
+              </div>
+              <div>
+                <label for="property">Property</label>
+                <select id="property">
+                  <option value="studio">Studio</option>
+                  <option value="1bed">1 Bedroom</option>
+                  <option value="2bed">2 Bedroom</option>
+                  <option value="3bed">3 Bedroom</option>
+                  <option value="4bed">4+ Bedroom</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div>
+                <label for="frequency">Frequency</label>
+                <select id="frequency">
+                  <option value="once">One-time</option>
+                  <option value="weekly">Weekly (10% off)</option>
+                  <option value="biweekly">Bi-weekly (7% off)</option>
+                  <option value="monthly">Monthly (5% off)</option>
+                </select>
+              </div>
+              <div>
+                <label for="date">Preferred date</label>
+                <input type="date" id="date" />
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div>
+                <label for="postcode">Postcode</label>
+                <input id="postcode" placeholder="e.g. TW3 1AA" />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" placeholder="e.g. 07xxx xxxxxx" />
+              </div>
+            </div>
+
+            <div>
+              <label for="notes">Notes</label>
+              <textarea id="notes" placeholder="Pets, parking, areas to focus on..."></textarea>
+            </div>
+
+            <div class="grid2 checks">
+              <label class="check-item">
+                <input type="checkbox" id="eco" />
+                <span>Eco-friendly products</span>
+              </label>
+
+              <label class="check-item">
+                <input type="checkbox" id="insideOven" />
+                <span>Include oven clean</span>
+              </label>
+            </div>
+
+            <div class="price-box">
+              <div>
+                <div class="mini">Estimated price</div>
+                <strong id="priceValue">£—</strong>
+                <div class="mini" id="priceHint">Select options to see estimate.</div>
+              </div>
+
+              <div class="price-actions">
+                <span class="pill soft" id="durationPill">~— hrs</span>
+                <button class="btn primary" type="submit">Request Booking</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-
-      <!-- Quote card -->
-      <div id="quote" class="card quote-card">
-        <div class="quote-title">
-          <div>
-            <h3>Instant Quote</h3>
-            <p>Get an estimated price in seconds</p>
-          </div>
-          <span class="pill" id="instantStatus">Live estimate</span>
-        </div>
-
-        <form class="form" id="quoteForm">
-          <div class="grid2">
-            <div>
-              <label for="service">Service</label>
-              <select id="service" required>
-                <option value="standard">Standard Clean</option>
-                <option value="deep">Deep Clean</option>
-                <option value="end">End of Tenancy</option>
-                <option value="office">Office Clean</option>
-              </select>
-            </div>
-            <div>
-              <label for="property">Property</label>
-              <select id="property" required>
-                <option value="studio">Studio</option>
-                <option value="1bed">1 Bedroom</option>
-                <option value="2bed">2 Bedroom</option>
-                <option value="3bed">3 Bedroom</option>
-                <option value="4bed">4+ Bedroom</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid2">
-            <div>
-              <label for="frequency">Frequency</label>
-              <select id="frequency" required>
-                <option value="once">One-time</option>
-                <option value="weekly">Weekly (10% off)</option>
-                <option value="biweekly">Bi-weekly (7% off)</option>
-                <option value="monthly">Monthly (5% off)</option>
-              </select>
-            </div>
-            <div>
-              <label for="date">Preferred date</label>
-              <input type="date" id="date" required />
-            </div>
-          </div>
-
-          <div class="grid2">
-            <div>
-              <label for="postcode">Postcode</label>
-              <input id="postcode" placeholder="e.g., TW3 1AA" required />
-              <div class="hint">UK postcodes supported (demo validation).</div>
-            </div>
-            <div>
-              <label for="phone">Phone</label>
-              <input id="phone" placeholder="e.g., 07xxx xxxxxx" required />
-              <div class="hint">We’ll text a confirmation (demo).</div>
-            </div>
-          </div>
-
-          <div>
-            <label for="notes">Notes (optional)</label>
-            <textarea id="notes" placeholder="Pets, parking, focus areas, preferred products..."></textarea>
-          </div>
-
-          <div class="grid2">
-            <label style="display:flex;gap:10px;align-items:center;margin-top:6px">
-              <input type="checkbox" id="eco" />
-              <span class="hint" style="color:var(--text)">Eco-friendly products</span>
-            </label>
-
-            <label style="display:flex;gap:10px;align-items:center;margin-top:6px">
-              <input type="checkbox" id="insideOven" />
-              <span class="hint" style="color:var(--text)">Include oven clean</span>
-            </label>
-          </div>
-
-          <div class="price">
-            <div>
-              <div class="hint">Estimated price</div>
-              <strong id="priceValue">£—</strong>
-              <div class="hint" id="priceHint">Select options to see estimate.</div>
-            </div>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
-              <span class="pill" id="durationPill">~— hrs</span>
-              <button class="btn primary" type="submit">Request Booking</button>
-            </div>
-          </div>
-
-          <div class="hint">
-            By submitting, you agree to be contacted by Cleovoro. This is a demo landing page—no data is sent anywhere.
-          </div>
-        </form>
-      </div>
-    </div>
+    </section>
 
     <!-- SERVICES -->
-    <section id="services">
-      <div class="section-title">
-        <div>
-          <h2>Services that fit your life</h2>
-          <p>Choose the clean you need—home, office, deep clean, or end of tenancy. Add extras anytime.</p>
+    <section id="services" class="section section-services">
+      <div class="wrap">
+        <div class="section-title reveal">
+          <div>
+            <h2>Services tailored to every space</h2>
+            <p>Every service is designed to match your needs, whether you want regular upkeep or a complete reset.</p>
+          </div>
         </div>
-        <a class="btn" href="#quote">Get a Quote</a>
-      </div>
 
-      <div class="features">
-        <div class="card feature">
-          <div class="icon">🏠</div>
-          <h3>Home Cleaning</h3>
-          <p>Kitchen, bathrooms, floors, dusting, and tidy finishes—perfect for regular upkeep.</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">🧽</div>
-          <h3>Deep Cleaning</h3>
-          <p>Extra attention to buildup, skirting boards, appliances, and hard-to-reach areas.</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">🧳</div>
-          <h3>End of Tenancy</h3>
-          <p>Move-out ready cleaning designed to help you meet landlord/agency expectations.</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">🏢</div>
-          <h3>Office Cleaning</h3>
-          <p>Workspaces, meeting rooms, kitchens, and washrooms—outside business hours available.</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">🧴</div>
-          <h3>Eco-Friendly Option</h3>
-          <p>Switch to eco products for a fresher clean with reduced harsh chemicals.</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">✅</div>
-          <h3>Satisfaction Guarantee</h3>
-          <p>If something is missed, we’ll return and fix it—simple and stress-free.</p>
+        <div class="features">
+          <div class="card feature reveal">
+            <div class="icon">🏠</div>
+            <h3>Home Cleaning</h3>
+            <p>Fresh kitchens, sparkling bathrooms, dust-free surfaces and beautifully finished spaces.</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">🧽</div>
+            <h3>Deep Cleaning</h3>
+            <p>Perfect for seasonal refreshes, special occasions, or when your space needs extra attention.</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">🧳</div>
+            <h3>End of Tenancy</h3>
+            <p>Detailed move-out cleaning to help properties look their best for landlords and agents.</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">🏢</div>
+            <h3>Office Cleaning</h3>
+            <p>Reliable cleaning for desks, meeting rooms, washrooms and shared workspaces.</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">🧴</div>
+            <h3>Eco-Friendly Option</h3>
+            <p>Choose greener products for a clean that feels fresher and more family-friendly.</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">✅</div>
+            <h3>Satisfaction Guarantee</h3>
+            <p>If something is missed, we’ll make it right quickly and professionally.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- WHY CHOOSE US -->
-<section id="why-choose-us">
-  <div class="section-title">
-    <div>
-      <h2>Why Choose Us</h2>
-      <p>We make cleaning simple, reliable, and stress-free for every home and office.</p>
-    </div>
-  </div>
+    <section id="why-choose-us" class="section split-bg">
+      <div class="wrap split-grid">
+        <div class="split-image reveal"></div>
 
-  <div class="features">
-    <div class="card feature">
-      <div class="icon">👥</div>
-      <h3>Reliable Team</h3>
-      <p>Our cleaners are punctual, trained and consistent.</p>
-    </div>
+        <div class="split-content reveal">
+          <div class="section-title left">
+            <div>
+              <h2>Why customers choose Cleovoro</h2>
+              <p>We combine trust, quality and convenience to deliver a cleaning service that feels premium from start to finish.</p>
+            </div>
+          </div>
 
-    <div class="card feature">
-      <div class="icon">🧼</div>
-      <h3>Professional Standards</h3>
-      <p>We follow detailed cleaning checklists for every job.</p>
-    </div>
-
-    <div class="card feature">
-      <div class="icon">📅</div>
-      <h3>Flexible Scheduling</h3>
-      <p>Weekly, fortnightly or one-off cleaning available.</p>
-    </div>
-
-    <div class="card feature">
-      <div class="icon">⭐</div>
-      <h3>Customer Satisfaction</h3>
-      <p>Our goal is simple: spotless spaces and happy clients.</p>
-    </div>
-  </div>
-</section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-      <div class="section-title">
-        <div>
-          <h2>Simple pricing</h2>
-          <p>Transparent packages to get you started. Your quote may vary based on size, condition, and add-ons.</p>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <h3>Reliable Team</h3>
+              <p>Our cleaners are punctual, trained and consistent.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Professional Standards</h3>
+              <p>We follow detailed cleaning checklists for every job.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Flexible Scheduling</h3>
+              <p>Weekly, fortnightly or one-off cleaning available.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Customer Satisfaction</h3>
+              <p>Our goal is simple: spotless spaces and happy clients.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="pricing">
-        <div class="card plan">
-          <h3>Standard</h3>
-          <p class="p">Best for weekly or regular upkeep.</p>
-          <div><span class="money">£59</span> <span class="per">/ from</span></div>
-          <ul class="list">
-            <li><span class="tick">✓</span> Dusting & surfaces</li>
-            <li><span class="tick">✓</span> Floors vacuum & mop</li>
-            <li><span class="tick">✓</span> Kitchen & bathroom clean</li>
-            <li><span class="tick">✓</span> Bin emptying</li>
-          </ul>
-          <div class="actions">
-            <a class="btn primary" href="#quote" data-preset="standard">Choose Standard</a>
-            <a class="btn" href="#contact">Ask a Question</a>
+    <!-- PRICING -->
+    <section id="pricing" class="section pricing-section">
+      <div class="wrap">
+        <div class="section-title reveal">
+          <div>
+            <h2>Simple pricing, premium service</h2>
+            <p>Choose the package that suits your space. Add-ons and repeat discounts are available instantly.</p>
           </div>
         </div>
 
-        <div class="card plan">
-          <div class="tag">Most Popular</div>
-          <h3>Deep Clean</h3>
-          <p class="p">Perfect for spring cleaning or resets.</p>
-          <div><span class="money">£109</span> <span class="per">/ from</span></div>
-          <ul class="list">
-            <li><span class="tick">✓</span> Includes Standard package</li>
-            <li><span class="tick">✓</span> Skirting boards & detail clean</li>
-            <li><span class="tick">✓</span> Appliance exterior clean</li>
-            <li><span class="tick">✓</span> Extra time & attention</li>
-          </ul>
-          <div class="actions">
-            <a class="btn primary" href="#quote" data-preset="deep">Choose Deep</a>
-            <a class="btn" href="#contact">Ask a Question</a>
+        <div class="pricing">
+          <div class="card plan reveal">
+            <h3>Standard</h3>
+            <p class="p">Best for regular upkeep and weekly freshness.</p>
+            <div><span class="money">£59</span> <span class="per">/ from</span></div>
+            <ul class="list">
+              <li><span class="tick">✓</span> Dusting & surfaces</li>
+              <li><span class="tick">✓</span> Vacuum & mop</li>
+              <li><span class="tick">✓</span> Kitchen & bathroom clean</li>
+              <li><span class="tick">✓</span> General tidy finish</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#quote" data-preset="standard">Choose Standard</a>
+            </div>
           </div>
-        </div>
 
-        <div class="card plan">
-          <h3>End of Tenancy</h3>
-          <p class="p">Move-out ready. Great for renters & landlords.</p>
-          <div><span class="money">£149</span> <span class="per">/ from</span></div>
-          <ul class="list">
-            <li><span class="tick">✓</span> Intensive full-property clean</li>
-            <li><span class="tick">✓</span> Inside cupboards & drawers</li>
-            <li><span class="tick">✓</span> Bathrooms descaled</li>
-            <li><span class="tick">✓</span> Optional oven add-on</li>
-          </ul>
-          <div class="actions">
-            <a class="btn primary" href="#quote" data-preset="end">Choose Tenancy</a>
-            <a class="btn" href="#contact">Ask a Question</a>
+          <div class="card plan featured reveal">
+            <div class="tag">Most Popular</div>
+            <h3>Deep Clean</h3>
+            <p class="p">Perfect when your space needs extra care.</p>
+            <div><span class="money">£109</span> <span class="per">/ from</span></div>
+            <ul class="list">
+              <li><span class="tick">✓</span> Includes Standard clean</li>
+              <li><span class="tick">✓</span> Detail-focused finish</li>
+              <li><span class="tick">✓</span> Extra attention to hard areas</li>
+              <li><span class="tick">✓</span> More time and care</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#quote" data-preset="deep">Choose Deep</a>
+            </div>
+          </div>
+
+          <div class="card plan reveal">
+            <h3>End of Tenancy</h3>
+            <p class="p">Ideal for renters, landlords and move-outs.</p>
+            <div><span class="money">£149</span> <span class="per">/ from</span></div>
+            <ul class="list">
+              <li><span class="tick">✓</span> Full-property clean</li>
+              <li><span class="tick">✓</span> Inside cupboards</li>
+              <li><span class="tick">✓</span> Bathrooms descaled</li>
+              <li><span class="tick">✓</span> Optional oven clean</li>
+            </ul>
+            <div class="actions">
+              <a class="btn primary" href="#quote" data-preset="end">Choose Tenancy</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- REVIEWS -->
-    <section id="reviews">
-      <div class="section-title">
-        <div>
-          <h2>What customers say</h2>
-          <p>Fast, friendly, and consistently high quality—this is the standard Cleovoro aims for.</p>
-        </div>
-      </div>
-
-      <div class="testimonials">
-        <div class="card review">
-          <div class="stars">★★★★★</div>
-          <h3 style="margin:8px 0 6px">“The flat looked brand new.”</h3>
-          <p>
-            Cleovoro handled our end-of-tenancy clean and the agent was impressed. Booking was easy and the team was punctual.
-          </p>
-          <div class="who">Amelia R.</div>
-          <div class="where">London</div>
+    <section id="reviews" class="section reviews-bg">
+      <div class="wrap">
+        <div class="section-title reveal">
+          <div>
+            <h2>What customers say</h2>
+            <p>Real feedback from clients who wanted reliable cleaning and a better overall experience.</p>
+          </div>
         </div>
 
-        <div class="card review">
-          <div class="stars">★★★★★</div>
-          <h3 style="margin:8px 0 6px">“Reliable weekly cleaning.”</h3>
-          <p>
-            We book weekly and it’s been consistent every time. Great attention to bathrooms and kitchen.
-          </p>
-          <div class="who">James K.</div>
-          <div class="where">Hounslow</div>
-        </div>
-      </div>
+        <div class="testimonials">
+          <div class="card review reveal">
+            <div class="stars">★★★★★</div>
+            <h3>“The flat looked brand new.”</h3>
+            <p>Cleovoro handled our end-of-tenancy clean and the result was fantastic. The team arrived on time and worked beautifully.</p>
+            <div class="who">Amelia R.</div>
+            <div class="where">London</div>
+          </div>
 
-      <div class="card cta" style="margin-top:12px">
-        <div>
-          <h3>Ready for a cleaner space?</h3>
-          <p>Get an instant estimate and request a booking in under a minute.</p>
+          <div class="card review reveal">
+            <div class="stars">★★★★★</div>
+            <h3>“Reliable every single week.”</h3>
+            <p>Great communication, lovely staff and consistently high-quality work. The kitchen and bathrooms always look amazing.</p>
+            <div class="who">James K.</div>
+            <div class="where">Hounslow</div>
+          </div>
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
+
+        <div class="card cta reveal">
+          <div>
+            <h3>Ready for a cleaner, calmer space?</h3>
+            <p>Request your instant estimate and let Cleovoro do the rest.</p>
+          </div>
           <a class="btn primary" href="#quote">Get Instant Quote</a>
-          <a class="btn" href="#contact">Contact Us</a>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-title">
-        <div>
-          <h2>Contact Cleovoro</h2>
-          <p>Replace these demo details with your real phone, email, and service areas.</p>
+    <section id="contact" class="section contact-section">
+      <div class="wrap">
+        <div class="section-title reveal">
+          <div>
+            <h2>Contact Cleovoro</h2>
+            <p>Replace these demo contact details with your real phone, email and service areas.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="features" style="grid-template-columns: repeat(3, 1fr)">
-        <div class="card feature">
-          <div class="icon">📞</div>
-          <h3>Phone</h3>
-          <p><strong style="color:var(--text)">+44 7xxx xxxxxx</strong><br/>Mon–Sat, 8am–7pm</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">✉️</div>
-          <h3>Email</h3>
-          <p><strong style="color:var(--text)">hello@cleovoro.co.uk</strong><br/>Replies within 24 hours</p>
-        </div>
-        <div class="card feature">
-          <div class="icon">📍</div>
-          <h3>Service Areas</h3>
-          <p>London • Greater London • Nearby towns<br/><span class="hint">(Demo text)</span></p>
+        <div class="contact-cards">
+          <div class="card feature reveal">
+            <div class="icon">📞</div>
+            <h3>Phone</h3>
+            <p><strong>+44 7xxx xxxxxx</strong><br>Mon–Sat, 8am–7pm</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">✉️</div>
+            <h3>Email</h3>
+            <p><strong>hello@cleovoro.co.uk</strong><br>Replies within 24 hours</p>
+          </div>
+
+          <div class="card feature reveal">
+            <div class="icon">📍</div>
+            <h3>Service Areas</h3>
+            <p>London • Greater London • Nearby towns</p>
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="wrap foot">
-        <div>
-          <div style="display:flex;align-items:center;gap:10px">
-            <div class="logo" style="width:34px;height:34px;border-radius:12px">C</div>
-            <div>
-              <div style="color:var(--text);font-weight:900">Cleovoro</div>
-              <div style="font-size:12px">© <span id="year"></span> Cleovoro. All rights reserved.</div>
-            </div>
+        <div class="foot-brand">
+          <div class="logo small-logo">C</div>
+          <div>
+            <div class="brand-title">Cleovoro</div>
+            <div class="brand-sub">© <span id="year"></span> All rights reserved.</div>
           </div>
         </div>
 
@@ -389,14 +389,13 @@
           <a href="#services">Services</a>
           <a href="#pricing">Pricing</a>
           <a href="#reviews">Reviews</a>
-          <a href="#quote">Quote</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </footer>
   </main>
 
-  <!-- TOAST -->
-  <div class="toast" id="toast" role="status" aria-live="polite">
+  <div class="toast" id="toast">
     <div class="ticon">✓</div>
     <div>
       <div class="ttext" id="toastTitle">Request received</div>
@@ -404,6 +403,6 @@
     </div>
   </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
