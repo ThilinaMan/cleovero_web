@@ -5,299 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cleovero | Cleaning Services</title>
   <meta name="description" content="Cleovoro provides reliable home & office cleaning with flexible scheduling and transparent pricing." />
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --muted:#9fb0d0;
-      --text:#eaf0ff;
-      --brand:#46c2ff;
-      --brand2:#7c5cff;
-      --ok:#2ee59d;
-      --line:rgba(255,255,255,.12);
-      --shadow: 0 16px 50px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--font);
-      background:
-        radial-gradient(1200px 600px at 15% 10%, rgba(70,194,255,.22), transparent 60%),
-        radial-gradient(900px 500px at 85% 30%, rgba(124,92,255,.18), transparent 60%),
-        radial-gradient(800px 500px at 50% 100%, rgba(46,229,157,.10), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.45;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:22px}
-    .nav{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.55);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}
-    .logo{
-      width:40px;height:40px;border-radius:14px;
-      background: linear-gradient(135deg,var(--brand),var(--brand2));
-      box-shadow: 0 10px 28px rgba(70,194,255,.18);
-      display:grid;place-items:center;
-      font-weight:900;
-    }
-    .menu{display:flex;gap:18px;align-items:center;color:var(--muted);font-weight:700}
-    .menu a{padding:10px 10px;border-radius:12px}
-    .menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:14px;border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
-      font-weight:900;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn:hover{transform: translateY(-1px);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
-    .btn.primary{
-      border:none;
-      background: linear-gradient(135deg,var(--brand),var(--brand2));
-      box-shadow: 0 16px 40px rgba(70,194,255,.14);
-    }
-    .btn.primary:hover{transform: translateY(-2px)}
-    .btn.small{padding:10px 12px;border-radius:12px;font-weight:900}
-    .burger{display:none}
-    .hero{
-      padding:46px 0 24px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      align-items:stretch;
-    }
-    .badge{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 12px;border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      color:var(--muted);
-      font-weight:800;
-      width:max-content;
-    }
-    .dot{width:10px;height:10px;border-radius:999px;background:var(--ok);box-shadow:0 0 0 4px rgba(46,229,157,.12)}
-    h1{font-size: clamp(34px, 4vw, 54px);line-height:1.05;margin:14px 0 12px}
-    .lead{color:var(--muted);font-size: 16px;max-width: 58ch}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
-    .trust{
-      display:flex;gap:14px;flex-wrap:wrap;
-      color:var(--muted);font-weight:800;font-size:13px;
-      margin-top:10px;
-    }
-    .trust span{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 12px;border-radius:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-    }
-
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .quote-card{padding:18px}
-    .quote-title{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .quote-title h3{margin:0;font-size:16px}
-    .quote-title p{margin:0;color:var(--muted);font-weight:800;font-size:12px}
-    .form{
-      margin-top:14px;
-      display:grid;
-      gap:10px;
-    }
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    label{font-size:12px;color:var(--muted);font-weight:800}
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(10,16,28,.55);
-      color:var(--text);
-      outline:none;
-    }
-    input:focus, select:focus, textarea:focus{border-color: rgba(70,194,255,.5); box-shadow: 0 0 0 4px rgba(70,194,255,.12)}
-    textarea{min-height:90px;resize:vertical}
-    .hint{color:var(--muted);font-size:12px;font-weight:700}
-    .price{
-      margin-top:8px;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px 12px;border-radius:14px;
-      border:1px dashed rgba(255,255,255,.18);
-      background: rgba(255,255,255,.04);
-      gap:10px;
-    }
-    .price strong{font-size:18px}
-    .pill{
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      color:var(--muted);
-      font-weight:900;
-      font-size:12px;
-      white-space:nowrap;
-    }
-
-    section{padding:34px 0}
-    .section-title{
-      display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;
-      margin-bottom:14px;
-    }
-    .section-title h2{margin:0;font-size:24px}
-    .section-title p{margin:0;color:var(--muted);font-weight:700;max-width:70ch}
-    .features{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .feature{padding:16px}
-    .icon{
-      width:42px;height:42px;border-radius:14px;
-      display:grid;place-items:center;
-      background: rgba(70,194,255,.10);
-      border:1px solid rgba(70,194,255,.22);
-      margin-bottom:10px;
-      font-size:18px;
-    }
-    .feature h3{margin:6px 0 6px;font-size:16px}
-    .feature p{margin:0;color:var(--muted);font-weight:650;font-size:13px}
-
-    .pricing{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .plan{padding:18px; position:relative; overflow:hidden}
-    .plan .tag{
-      position:absolute; top:14px; right:14px;
-      padding:8px 10px;border-radius:999px;
-      font-size:12px;font-weight:900;
-      background:rgba(124,92,255,.16);
-      border:1px solid rgba(124,92,255,.3);
-      color:var(--text);
-    }
-    .plan h3{margin:0 0 6px}
-    .plan .p{color:var(--muted);margin:0 0 12px;font-weight:700}
-    .plan .money{font-size:34px;font-weight:1000}
-    .plan .per{color:var(--muted);font-weight:800}
-    .list{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:10px; color:var(--muted); font-weight:750}
-    .list li{display:flex;gap:10px;align-items:flex-start}
-    .tick{width:20px;height:20px;border-radius:8px;background:rgba(46,229,157,.12);border:1px solid rgba(46,229,157,.25);display:grid;place-items:center;color:var(--ok);font-weight:1000}
-    .plan .actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-
-    .testimonials{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    .review{padding:16px}
-    .stars{letter-spacing:1px;color:#ffd36a}
-    .review p{color:var(--muted);font-weight:700;margin:10px 0 0}
-    .review .who{margin-top:12px;color:var(--text);font-weight:900}
-    .review .where{color:var(--muted);font-weight:800;font-size:12px}
-
-    .cta{
-      padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .cta h3{margin:0;font-size:18px}
-    .cta p{margin:4px 0 0;color:var(--muted);font-weight:700}
-
-    footer{
-      padding:26px 0 40px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-weight:700;
-    }
-    .foot{
-      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center
-    }
-    .links{display:flex;gap:14px;flex-wrap:wrap}
-    .links a{padding:8px 10px;border-radius:12px}
-    .links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
-
-    /* toast */
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:18px;
-      transform:translateX(-50%);
-      background: rgba(10,16,28,.88);
-      border:1px solid rgba(255,255,255,.18);
-      padding:12px 14px;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      display:none;
-      gap:10px;
-      align-items:center;
-      z-index:999;
-      max-width:min(620px, calc(100% - 24px));
-    }
-    .toast.show{display:flex;animation: pop .18s ease-out}
-    .toast .ticon{
-      width:28px;height:28px;border-radius:12px;
-      display:grid;place-items:center;
-      background:rgba(46,229,157,.12);
-      border:1px solid rgba(46,229,157,.22);
-      color:var(--ok);
-      font-weight:1000;
-      flex:0 0 auto;
-    }
-    .toast .ttext{color:var(--text);font-weight:800}
-    .toast .tmuted{color:var(--muted);font-weight:700;font-size:12px;margin-top:2px}
-    @keyframes pop{
-      from{transform:translateX(-50%) translateY(6px); opacity:.6}
-      to{transform:translateX(-50%) translateY(0); opacity:1}
-    }
-
-    /* responsive */
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr; padding-top:30px}
-      .features{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
-      .testimonials{grid-template-columns:1fr}
-      .menu{display:none}
-      .burger{display:inline-flex}
-      .grid2{grid-template-columns:1fr}
-    }
-    /* mobile menu */
-    .mobile{
-      display:none;
-      border-top:1px solid var(--line);
-      padding:10px 0 14px;
-    }
-    .mobile a{
-      display:block;
-      padding:12px 12px;
-      margin-top:8px;
-      border-radius:14px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted);
-      font-weight:800;
-    }
-    .mobile a:hover{color:var(--text);background: rgba(255,255,255,.06)}
-    .mobile.show{display:block}
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -497,6 +205,42 @@
       </div>
     </section>
 
+    <!-- WHY CHOOSE US -->
+<section id="why-choose-us">
+  <div class="section-title">
+    <div>
+      <h2>Why Choose Us</h2>
+      <p>We make cleaning simple, reliable, and stress-free for every home and office.</p>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="card feature">
+      <div class="icon">👥</div>
+      <h3>Reliable Team</h3>
+      <p>Our cleaners are punctual, trained and consistent.</p>
+    </div>
+
+    <div class="card feature">
+      <div class="icon">🧼</div>
+      <h3>Professional Standards</h3>
+      <p>We follow detailed cleaning checklists for every job.</p>
+    </div>
+
+    <div class="card feature">
+      <div class="icon">📅</div>
+      <h3>Flexible Scheduling</h3>
+      <p>Weekly, fortnightly or one-off cleaning available.</p>
+    </div>
+
+    <div class="card feature">
+      <div class="icon">⭐</div>
+      <h3>Customer Satisfaction</h3>
+      <p>Our goal is simple: spotless spaces and happy clients.</p>
+    </div>
+  </div>
+</section>
+
     <!-- PRICING -->
     <section id="pricing">
       <div class="section-title">
@@ -660,217 +404,6 @@
     </div>
   </div>
 
-  <script>
-    // ---------- helpers ----------
-    const $ = (sel) => document.querySelector(sel);
-
-    function showToast(title, body){
-      const toast = $("#toast");
-      $("#toastTitle").textContent = title;
-      $("#toastBody").textContent = body;
-      toast.classList.add("show");
-      clearTimeout(showToast._t);
-      showToast._t = setTimeout(() => toast.classList.remove("show"), 3200);
-    }
-
-    function smoothCloseMobileMenu(){
-      const mobile = $("#mobileMenu");
-      mobile.classList.remove("show");
-    }
-
-    // ---------- mobile menu ----------
-    const burgerBtn = $("#burgerBtn");
-    const mobileMenu = $("#mobileMenu");
-
-    burgerBtn?.addEventListener("click", () => {
-      mobileMenu.classList.toggle("show");
-    });
-
-    mobileMenu?.addEventListener("click", (e) => {
-      if(e.target.tagName.toLowerCase() === "a") smoothCloseMobileMenu();
-    });
-
-    // ---------- preset buttons ----------
-    document.addEventListener("click", (e) => {
-      const a = e.target.closest("[data-preset]");
-      if(!a) return;
-      const preset = a.getAttribute("data-preset");
-      const service = $("#service");
-      if(preset === "standard") service.value = "standard";
-      if(preset === "deep") service.value = "deep";
-      if(preset === "end") service.value = "end";
-      computeEstimate();
-    });
-
-    // ---------- quote estimator ----------
-    const serviceEl = $("#service");
-    const propertyEl = $("#property");
-    const frequencyEl = $("#frequency");
-    const dateEl = $("#date");
-    const ecoEl = $("#eco");
-    const ovenEl = $("#insideOven");
-    const postcodeEl = $("#postcode");
-    const phoneEl = $("#phone");
-
-    // default date = tomorrow (local)
-    (function initDate(){
-      const d = new Date();
-      d.setDate(d.getDate() + 1);
-      const iso = d.toISOString().slice(0,10);
-      dateEl.value = iso;
-      $("#year").textContent = new Date().getFullYear();
-    })();
-
-    function isValidUKPostcode(p){
-      // Simple demo-level UK postcode regex (not perfect but good enough for landing page)
-      const re = /^([A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2})$/i;
-      return re.test((p||"").trim());
-    }
-
-    function isValidPhone(p){
-      // Simple UK mobile-ish validation (demo)
-      const digits = (p||"").replace(/\D/g,"");
-      return digits.length >= 10 && digits.length <= 12;
-    }
-
-    function computeEstimate(){
-      const service = serviceEl.value;
-      const property = propertyEl.value;
-      const freq = frequencyEl.value;
-      const eco = ecoEl.checked;
-      const oven = ovenEl.checked;
-
-      // Base by service
-      const serviceBase = {
-        standard: 45,
-        deep: 85,
-        end: 120,
-        office: 75
-      }[service] ?? 45;
-
-      // Size multiplier
-      const size = {
-        studio: 1.0,
-        "1bed": 1.2,
-        "2bed": 1.45,
-        "3bed": 1.75,
-        "4bed": 2.1
-      }[property] ?? 1.0;
-
-      // Frequency discounts
-      const discount = {
-        once: 0.00,
-        weekly: 0.10,
-        biweekly: 0.07,
-        monthly: 0.05
-      }[freq] ?? 0.00;
-
-      // Add-ons
-      const ecoFee = eco ? 6 : 0;
-      const ovenFee = oven ? 18 : 0;
-
-      let price = (serviceBase * size) + ecoFee + ovenFee;
-      price = price * (1 - discount);
-
-      // duration estimate
-      const baseHours = {
-        standard: 2.0,
-        deep: 3.5,
-        end: 4.5,
-        office: 3.0
-      }[service] ?? 2.0;
-
-      const hours = Math.max(1.5, baseHours * (size * 0.95));
-      const hoursRounded = Math.round(hours * 2) / 2;
-
-      $("#priceValue").textContent = "£" + Math.round(price);
-      $("#durationPill").textContent = "~" + hoursRounded + " hrs";
-
-      // Hint text
-      const freqText = {
-        once: "One-time booking",
-        weekly: "Weekly discount applied",
-        biweekly: "Bi-weekly discount applied",
-        monthly: "Monthly discount applied"
-      }[freq];
-
-      $("#priceHint").textContent = `${freqText}${eco ? " • Eco products" : ""}${oven ? " • Oven included" : ""}`;
-
-      // Live estimate pill
-      $("#instantStatus").textContent = "Updated";
-      clearTimeout(computeEstimate._t);
-      computeEstimate._t = setTimeout(() => $("#instantStatus").textContent = "Live estimate", 900);
-    }
-
-    [serviceEl, propertyEl, frequencyEl, ecoEl, ovenEl].forEach(el => {
-      el.addEventListener("change", computeEstimate);
-      el.addEventListener("input", computeEstimate);
-    });
-
-    computeEstimate();
-
-    // ---------- form submit ----------
-    $("#quoteForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const postcode = postcodeEl.value.trim();
-      const phone = phoneEl.value.trim();
-
-      const postcodeOk = isValidUKPostcode(postcode);
-      const phoneOk = isValidPhone(phone);
-
-      if(!postcodeOk){
-        postcodeEl.focus();
-        showToast("Check your postcode", "Please enter a valid UK postcode (e.g., TW3 1AA).");
-        return;
-      }
-      if(!phoneOk){
-        phoneEl.focus();
-        showToast("Check your phone number", "Please enter a valid UK phone number.");
-        return;
-      }
-
-      // Create a booking summary (demo)
-      const summary = {
-        service: serviceEl.options[serviceEl.selectedIndex].text,
-        property: propertyEl.options[propertyEl.selectedIndex].text,
-        frequency: frequencyEl.options[frequencyEl.selectedIndex].text,
-        date: dateEl.value,
-        eco: ecoEl.checked ? "Yes" : "No",
-        oven: ovenEl.checked ? "Yes" : "No",
-        postcode,
-        phone,
-        price: $("#priceValue").textContent,
-        duration: $("#durationPill").textContent,
-        notes: $("#notes").value.trim()
-      };
-
-      // Save demo request locally (no server)
-      const key = "cleovoro_demo_requests";
-      const old = JSON.parse(localStorage.getItem(key) || "[]");
-      old.unshift({ ...summary, createdAt: new Date().toISOString() });
-      localStorage.setItem(key, JSON.stringify(old.slice(0, 25)));
-
-      showToast("Booking request saved (demo)", "We’ll contact you shortly to confirm your slot.");
-
-      // Optional: reset notes only
-      $("#notes").value = "";
-    });
-
-    // ---------- smooth anchor scrolling ----------
-    document.addEventListener("click", (e) => {
-      const link = e.target.closest('a[href^="#"]');
-      if(!link) return;
-      const id = link.getAttribute("href");
-      if(id.length <= 1) return;
-
-      const target = document.querySelector(id);
-      if(!target) return;
-
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.replaceState(null, "", id);
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
