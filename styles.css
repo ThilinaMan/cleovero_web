@@ -47,14 +47,18 @@ a{
   position: sticky;
   top: 0;
   z-index: 999;
-  background: rgba(255,255,255,.82);
+  background: rgba(15, 40, 120);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(220,230,240,.8);
   transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .nav.scrolled{
   box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+.nav.hide{
+  transform: translateY(-100%);
 }
 
 .nav-inner{
@@ -74,25 +78,35 @@ a{
 .brand-title{
   font-size: 15px;
   font-weight: 900;
+  color: #ffffff;
 }
 
 .brand-sub{
   font-size: 12px;
-  color: var(--grey);
+  color: #ffffffb0;
   font-weight: 700;
 }
 
 .logo{
-  width: 44px;
+  all: unset;              /* removes EVERYTHING (box, border, shadow, etc.) */
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
   height: 44px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--blue), var(--light-blue));
-  color: white;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(90,174,255,.24);
+  width: auto;
+  object-fit: contain;
+  display: block;
   transition: transform var(--transition);
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.08));
+  border-radius: 12px;
+
+}
+
+/* hover animation */
+.brand:hover .logo img{
+  transform: scale(1.05);
 }
 
 .brand:hover .logo{
@@ -107,7 +121,7 @@ a{
 
 .menu a{
   font-weight: 700;
-  color: var(--grey);
+  color: #ffffffc7;
   position: relative;
   transition: var(--transition);
 }
@@ -853,10 +867,12 @@ footer{
   gap: 12px;
 }
 
-.small-logo{
-  width: 38px;
-  height: 38px;
-  border-radius: 14px;
+.small-logo-img{
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.08));
 }
 
 .links{

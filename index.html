@@ -12,7 +12,9 @@
   <header class="nav" id="navbar">
     <div class="wrap nav-inner">
       <a href="#top" class="brand">
-        <div class="logo">C</div>
+        <div class="logo">
+          <img src="https://i.ibb.co/BVnv0CFX/logo.png" alt="Cleovoro Logo" class="small-logo-img ">
+        </div>
         <div>
           <div class="brand-title">Cleovoro</div>
           <div class="brand-sub">Cleaning Services</div>
@@ -82,23 +84,62 @@
             <div class="grid2">
               <div>
                 <label for="service">Service</label>
-                <select id="service">
+                <!-- <select id="service">
                   <option value="standard">Standard Clean</option>
                   <option value="deep">Deep Clean</option>
                   <option value="end">End of Tenancy</option>
                   <option value="office">Office Clean</option>
+                </select> -->
+
+                <select id="service">
+                  <option value="">Select Service</option>
+                  <option value="home">Home Cleaning</option>
+                  <option value="airbnb_clean">Airbnb (Clean Only)</option>
+                  <option value="airbnb_full">Airbnb (Full Service)</option>
+                  <option value="deep">Deep Cleaning</option>
+                  <option value="tenancy">End of Tenancy</option>
                 </select>
               </div>
               <div>
                 <label for="property">Property</label>
-                <select id="property">
+                <!-- <select id="property">
                   <option value="studio">Studio</option>
                   <option value="1bed">1 Bedroom</option>
                   <option value="2bed">2 Bedroom</option>
                   <option value="3bed">3 Bedroom</option>
                   <option value="4bed">4+ Bedroom</option>
+                </select> -->
+                <select id="property">
+                  <option value="">Property Size</option>
+                  <option value="1bed">1 Bedroom</option>
+                  <option value="2bed">2 Bedroom</option>
+                  <option value="3bed">3 Bedroom</option>
+                  <option value="4bed">4 Bedroom</option>
                 </select>
               </div>
+            </div>
+
+            <div class="form">
+              <label>Add-ons</label>
+
+              <label class="check-item">
+                <input type="checkbox" id="oven"> Oven Cleaning (£25)
+              </label>
+
+              <label class="check-item">
+                <input type="checkbox" id="fridge"> Fridge Cleaning (£20)
+              </label>
+
+              <label class="check-item">
+                <input type="checkbox" id="sameDay"> Same Day Booking (+£20)
+              </label>
+
+              <label>Windows (Internal)</label>
+              <select id="windows">
+                <option value="">None</option>
+                <option value="small">£20</option>
+                <option value="large">£40</option>
+              </select>
             </div>
 
             <div class="grid2">
@@ -106,9 +147,9 @@
                 <label for="frequency">Frequency</label>
                 <select id="frequency">
                   <option value="once">One-time</option>
-                  <option value="weekly">Weekly (10% off)</option>
-                  <option value="biweekly">Bi-weekly (7% off)</option>
-                  <option value="monthly">Monthly (5% off)</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="biweekly">Fortnightly</option>
+                  <option value="monthly">Monthly</option>
                 </select>
               </div>
               <div>
@@ -444,7 +485,7 @@
     <footer>
       <div class="wrap foot">
         <div class="foot-brand">
-          <div class="logo small-logo">C</div>
+          <img class="small-logo-img" src="https://i.ibb.co/BVnv0CFX/logo.png" alt="Cleovoro Logo">
           <div>
             <div class="brand-title">Cleovoro</div>
             <div class="brand-sub">© <span id="year"></span> All rights reserved.</div>
